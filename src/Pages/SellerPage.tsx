@@ -1,6 +1,6 @@
 import React from "react";
-import { SellerList } from "../Components/SellerList";
-import { SellerSubmit } from "../Components/SellerSubmit";
+import { SellerList } from "../Seller Components/SellerList";
+import { SellerSubmit } from "../Seller Components/SellerSubmit";
 import { getAllSellers, postSeller } from "../Services/SellerAPIService";
 
 export function SellerPage(){
@@ -19,7 +19,7 @@ export function SellerPage(){
     <>
     <SellerList></SellerList>
     <SellerSubmit></SellerSubmit>
-    <button onClick={postSeller}>test if i can post a seller</button>
+    <button onClick={postSellers}>test if i can post a seller</button>
     <button onClick={logAllSeller}>test i can get all seller</button>
     </>
         )
