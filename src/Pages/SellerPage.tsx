@@ -10,7 +10,7 @@ export function SellerPage(){
         .then(json => {console.log(json)});
     }
     function postSellers(){
-        postSeller()
+        postSeller({name: "New Seller", id:0 })
         .then(response => {return response.json()})
         .then(json => {console.log(json)})
         .catch(error => {console.log(error)})

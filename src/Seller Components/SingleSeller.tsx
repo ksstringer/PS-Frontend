@@ -8,6 +8,6 @@ interface propsInterface {
 export function SingleSeller(props:propsInterface) {
     return (<>
     <h2>{props.data.name}</h2>
-    <p style={{fontSize:12}}>{props.data.id}</p>
+    <p>{props.data.id}</p>
     </>)
 }

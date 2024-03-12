@@ -5,4 +5,6 @@ export function WelcomePage() {
     return (<>
     <Welcome></Welcome>
     </>)
+
+    //Add some images?
 }

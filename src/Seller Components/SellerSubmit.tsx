@@ -13,12 +13,12 @@ export function SellerSubmit() {
             name:userInput,
             id:1
         }
-        postSeller();
+        postSeller(seller);
     }
     
     return (<>
     <h1>Submit a new seller</h1>
     <input onChange={userInputHandler} value={userInput}></input>
-    <button onClick={buttonClickHandler}>submit</button>
+    <button onClick={buttonClickHandler}>Submit</button>
     </>)
 }
