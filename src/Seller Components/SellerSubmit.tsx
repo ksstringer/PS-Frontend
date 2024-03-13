@@ -8,17 +8,27 @@ export function SellerSubmit() {
         let textBox = event.target as HTMLTextAreaElement;
         setUserInput(textBox.value);
     }
+
+    const [idInput, setIdInput] = useState<number>(0)
+    function idInputHandler(event:SyntheticEvent){
+        let idBox = event.target as HTMLInputElement;
+        setIdInput(parseInt(idBox.value));
+    }
+
     function buttonClickHandler(){
         let seller : Seller = {
             name:userInput,
-            id:1
+            id:idInput
         }
         postSeller(seller);
     }
     
     return (<>
-    <h1>Submit a new seller</h1>
-    <input onChange={userInputHandler} value={userInput}></input>
+    <h2>Submit a new seller</h2>
+    <label htmlFor="sellerName">Seller Name: </label>
+    <input onChange={userInputHandler} value={userInput}></input> <br/>
+    <label htmlFor="sellerId">Seller ID: </label>
+    <input onChange={idInputHandler} value={idInput}></input><br/>
     <button onClick={buttonClickHandler}>Submit</button>
     </>)
 }

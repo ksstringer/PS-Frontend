@@ -13,5 +13,14 @@ export function postProduct(product : Product){
         mode:"cors",
         headers:{"Content-Type":"application/json"},
         body:JSON.stringify(product)
-    })
+    });
+}
+
+export function deleteProduct(productID: number | undefined){
+    return fetch(apiBaseURL+"product/{id}", {
+        method:"DELETE",
+        mode:"cors",
+        headers:{"Content-Type":"application/json"},
+        body:JSON.stringify(productID),
+    });   
 }

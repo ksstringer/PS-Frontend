@@ -7,7 +7,8 @@ interface propsInterface {
 
 export function SingleSeller(props:propsInterface) {
     return (<>
-    <h2>{props.data.name}</h2>
-    <p>{props.data.id}</p>
+    <span><b>{props.data.name}</b></span><br/>
+    <span>ID: {props.data.id}</span><br/>
+    <br/>
     </>)
 }
