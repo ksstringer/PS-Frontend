@@ -1,9 +1,15 @@
 import React, { SyntheticEvent, useState } from "react";
 import { Product } from "../Models/Product";
-import { postProduct } from "../Services/ProductAPIService";
+import { updateProduct } from "../Services/ProductAPIService";
 
-export function ProductSubmit() {
-    
+interface propsInterface {
+    data:Product
+}
+
+export function ProductEdit(props:propsInterface) {
+
+    const[updateShown, setUpdateShown] = useState(false);
+
     const [nameInput, setNameInput] = useState<string>("")
     function nameInputHandler(event:SyntheticEvent){
         let textBox = event.target as HTMLTextAreaElement;
@@ -22,23 +28,26 @@ export function ProductSubmit() {
         setSellerInput(parseInt(sellerBox.value));
     }
 
-    function buttonClickHandler(){
+    function saveClickHandler(){
         let product : Product = {
-            name:nameInput,
-            price:priceInput,
-            seller:sellerInput
-        }
-        postProduct(product);
-    }
+             name:nameInput,
+             id:props.data.id,
+             price:priceInput,
+             seller:sellerInput
+         }
+         let productId = props.data.id;
+         updateProduct(product, productId);
+     }
 
     return (<>
-    <h2>Submit a new product</h2>
     <label htmlFor="productName">Product Name: </label><br />
     <input onChange={nameInputHandler} value={nameInput}></input><br />
     <label htmlFor="price">Price: </label><br />
     <input onChange={priceInputHandler} value={priceInput}></input><br />
+    <label htmlFor="productId">Product ID: </label><br />
+    <input value={props.data.id} readOnly={true}></input><br />
     <label htmlFor="seller">Seller Id: </label><br />
     <input onChange={sellerInputHandler} value={sellerInput}></input><br />
-    <button onClick={buttonClickHandler}>Submit</button>
+    <button onClick={saveClickHandler}>Save</button>
     </>)
 }

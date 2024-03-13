@@ -20,5 +20,3 @@ export function ProductList() {
     </>);
 
 }
-
-// deleteClickHandler={product.id?}

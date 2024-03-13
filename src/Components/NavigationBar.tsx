@@ -10,6 +10,4 @@ export function NavigationBar() {
         <li><Link to="products">Product Page</Link></li>
     </ul>
     </>);
-    //put space between each link on display
-    //make the links prettier (more like buttons?)
 }

@@ -12,9 +12,7 @@ interface propsInterface {
 
 /**
 export function ProductDelete(props:propsInterface){
-    function deleteClickHandler(){
-        let deletionId = props.SelectProductHandler(props.data.id);
-        deleteProduct(deletionId);
-    }
-
-} **/
+    let productDeletion = props.data.id
+        console.log(props.data.id);
+        deleteProduct(productDeletion);
+    } */
